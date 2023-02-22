@@ -13,16 +13,16 @@ export const TransitionTest: FC<{
 }> = ({titleText, titleColor}) => {
 	const bgColors = ["red", "blue"];
 	const sequences = bgColors.map((color) => (
-		<>
+		[
 			<TransitionSeries.Sequence durationInFrames={60}>
 				<AbsoluteFill style={{backgroundColor: color}}/>
 			</TransitionSeries.Sequence>
-
+		,
 			<TransitionSeries.Transition
 				durationInFrames={30}
 				transitionComponent={FadeTransition}
 			/>
-		</>
+		]
 	))
 	return (
 		<TransitionSeries>
